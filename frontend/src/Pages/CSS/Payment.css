@@ -1,0 +1,90 @@
+.payment-container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+.payment-container h1 {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+/* Section Styles */
+.payment-summary,
+.payment-methods {
+  margin-bottom: 35px;
+  padding: 25px;
+  border: 1px solid #e2e2e2;
+  border-radius: 10px;
+  background: #fafafa;
+}
+
+.payment-summary h2,
+.payment-methods h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #333;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+}
+
+/* Order Summary Rows */
+.payment-summary p {
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 0;
+  font-size: 16px;
+  color: #555;
+}
+
+.payment-summary .payment-total {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+  margin-top: 15px;
+}
+
+/* Payment Methods */
+.payment-methods label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+}
+
+.payment-methods input {
+  margin-right: 12px;
+}
+
+/* Pay Button */
+.pay-button {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  background: #ff4141;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 20px;
+}
+
+.pay-button:hover {
+  background: #e03a3a;
+}
+
+.pay-button:active {
+  background: #c73333;
+}
