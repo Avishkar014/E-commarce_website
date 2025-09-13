@@ -7,7 +7,7 @@ const ListProduct = () => {
 
   const fetchInfo = async () => {
     try {
-      const res = await fetch('http://localhost:4000/allproducts');
+      const res = await fetch('https://e-commarce-website-backend.onrender.com/allproducts');
       const data = await res.json();
       setAllProducts(data);
     } catch (error) {
@@ -18,13 +18,14 @@ const ListProduct = () => {
   useEffect(() => {
     fetchInfo();
   }, []);
+  
   const remove_product = async (id) => {
-    await fetch('http://localhost:4000/removeproduct', {
+    await fetch('https://e-commarce-website-backend.onrender.com/removeproduct', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ id:id}), // Replace with actual product ID
+      body: JSON.stringify({ id: id }),
     });
     await fetchInfo();
   }
