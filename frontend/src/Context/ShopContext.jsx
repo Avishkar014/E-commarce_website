@@ -9,11 +9,10 @@ const ShopContextProvider = ({ children }) => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch("http://localhost:4000/allproducts");
+        const response = await fetch("https://e-commarce-website-backend.onrender.com/allproducts");
         const data = await response.json();
         setAll_product(data);
 
-        // ✅ Initialize cart dynamically after products load
         const initialCart = {};
         data.forEach((product) => {
           initialCart[product.id] = 0;
@@ -26,17 +25,16 @@ const ShopContextProvider = ({ children }) => {
     fetchProducts();
   }, []);
 
-  // ✅ New useEffect to fetch user's cart data
   useEffect(() => {
     if (localStorage.getItem('auth-token')) {
-      fetch('http://localhost:4000/getcart', {
+      fetch('https://e-commarce-website-backend.onrender.com/getcart', {
         method: 'POST',
         headers: {
           Accept: 'application/form-data',
           'auth-token': `${localStorage.getItem('auth-token')}`,
           'Content-Type': 'application/json',
         },
-        body: "", // The body should be an empty string for this GET-like request
+        body: "",
       })
         .then((response) => response.json())
         .then((data) => setCartItems(data));
@@ -49,7 +47,7 @@ const ShopContextProvider = ({ children }) => {
       [itemId]: (prev[itemId] || 0) + 1,
     }));
     if (localStorage.getItem('auth-token')) {
-      fetch("http://localhost:4000/addtocart", {
+      fetch("https://e-commarce-website-backend.onrender.com/addtocart", {
         method: "POST",
         headers: {
           Accept: "application/form-data",
@@ -69,7 +67,7 @@ const ShopContextProvider = ({ children }) => {
       [itemId]: Math.max((prev[itemId] || 0) - 1, 0),
     }));
     if (localStorage.getItem('auth-token')) {
-      fetch('http://localhost:4000/removefromcart', {
+      fetch('https://e-commarce-website-backend.onrender.com/removefromcart', {
         method: 'POST',
         headers: {
           Accept: 'application/form-data',
