@@ -265,7 +265,7 @@ app.post("/removeproduct", async (req, res) => {
 
 // ✅ Start Server
 const server = app.listen(port, () => {
-  console.log(`🚀 Server is running on http://localhost:${port}`);
+  console.log(`🚀 Server is running on https://e-commarce-website-backend.onrender.com:${port}`);
 });
 
 server.on("error", (err) => {

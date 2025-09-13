@@ -15,7 +15,7 @@ const AddProduct = () => {
   const [error, setError] = useState(null);
 
   // ✅ Use Vite env or fallback
-  const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:4000";
+  const API_BASE = import.meta.env.VITE_API_URL || "https://e-commarce-website-backend.onrender.com:4000";
 
   // ✅ Live image preview
   const imagePreview = useMemo(() => {
